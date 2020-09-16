@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "test@playauto.com",
+      "password": "12345"
+    },
+    {
+      "id": 2,
+      "email": "rony@playauto.com",
+      "password": "1111"
+    }
+  ]
+}
