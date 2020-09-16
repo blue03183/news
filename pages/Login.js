@@ -45,6 +45,7 @@ function Login () {
           placeholderTextColor='#ffffff'
           selectionColor='#fff'
           keyboardType='email-address'
+          autoCapitalize='none'
           onChangeText={(text) => setUserInfo({ ...userInfo, email: text })}
         />
         { isClick && userInfo.email === '' 
@@ -57,7 +58,7 @@ function Login () {
         <TextInput 
           style={styles.textBox}
           placeholder='Password'
-          placeholderTextColor='#ffffff'-
+          placeholderTextColor='#ffffff'
           selectionColor='#fff'
           onChangeText={(text) => setUserInfo({ ...userInfo, password: text })}
           secureTextEntry
