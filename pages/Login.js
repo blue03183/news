@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, Alert } from 'react-native';
 import * as userApi from '../api/user';
+import { Actions } from 'react-native-router-flux';
 
 function Login () {
 
@@ -21,11 +22,16 @@ function Login () {
       });
 
       if (matchData.length) {
-        Alert.alert('성공', '로그인이 완료되었습니다.');
+        Actions.news();
       } else {
         Alert.alert('실패', '일치하는 사용자 정보가 없습니다.');
       }
     }
+  };
+
+  // 회원등록 페이지 이동.
+  const moveSignup = () => {
+    Actions.register();
   };
 
   return (
@@ -72,14 +78,20 @@ function Login () {
         <TouchableOpacity style={styles.button} onPress={loginAction}>
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
-      </View>      
+      </View>
+      <View style={styles.bottomText}>
+        <Text>Don't have account yet?</Text>
+        <TouchableOpacity onPress={moveSignup}>
+          <Text style={{ paddingLeft: 10 }}>SignUp</Text>
+        </TouchableOpacity>        
+      </View>
     </>
   );
 };
 
 const styles = StyleSheet.create({
   logoContainer: {
-    flex: 1,
+    flexGrow: 1,
     alignItems: 'center',
     justifyContent: 'flex-end'
   },
@@ -116,6 +128,12 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontWeight: '900',
     marginTop: 15
+  },
+  bottomText: {
+    flexGrow: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
 

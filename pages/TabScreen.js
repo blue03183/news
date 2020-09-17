@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Container, Header, Body, Title, Content, Tab, Tabs } from 'native-base';
-import Tab1 from './tabOne';
-import Tab2 from './tabTwo';
-import Tab3 from './tabThree';
+import Tab1 from '../Components/tabOne';
+import Tab2 from '../Components/tabTwo';
+import Tab3 from '../Components/tabThree';
 
 function TabScreen () {
   return (
